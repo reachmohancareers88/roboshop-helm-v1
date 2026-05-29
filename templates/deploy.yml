@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-{{ .Values.app_name }}
+  labels:
+    app: roboshop-{{ .Values.app_name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roboshop-{{ .Values.app_name }}
+  template:
+    metadata:
+      labels:
+        app: roboshop-{{ .Values.app_name }}
+    spec:
+      containers:
+      - name: roboshop-{{ .Values.app_name }}
+        image: raghudevopsb89.azurecr.io/roboshop-{{ .Values.app_name }}
+        envFrom:
+          - configMapRef:
+              name: roboshop-{{ .Values.app_name }}

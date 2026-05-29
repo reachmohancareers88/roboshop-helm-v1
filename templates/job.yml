@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: roboshop-{{ .Values.app_name }}-db
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: {{ .Values.app_name }}-db
+        image: raghudevopsb89.azurecr.io/roboshop-{{ .Values.app_name }}-db
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: roboshop-{{ .Values.app_name }}
