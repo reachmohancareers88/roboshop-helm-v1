@@ -1,0 +1,8 @@
+app_name: cart
+app_port: 8003
+
+config_map:
+  REDIS_HOST : valkey-dev.rdevopsb89.online
+  CATALOGUE_URL : http://roboshop-catalogue:8002
+  PORT : "8003"
+
