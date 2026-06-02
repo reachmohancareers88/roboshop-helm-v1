@@ -1,3 +1,6 @@
 job:
   enabled: false
 
+config_map: {}
+
+service_type: ClusterIP

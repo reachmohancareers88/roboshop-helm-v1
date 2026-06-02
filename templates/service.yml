@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: roboshop-{{ .Values.app_name }}
 spec:
+  type: {{ .Values.service_type | default "ClusterIP" }}
   selector:
     app: roboshop-{{ .Values.app_name }}
   ports:

@@ -6,3 +6,4 @@ config_map:
   CATALOGUE_URL : http://roboshop-catalogue:8002
   PORT : "8003"
 
+

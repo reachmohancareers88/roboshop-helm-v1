@@ -1,0 +1,14 @@
+app_name: shipping
+app_port: 8004
+
+config_map:
+  DB_HOST : mysql-dev.rdevopsb89.online
+  DB_USER : shipping
+  DB_PASS : RoboShop@1
+  MYSQL_ROOT_PASSWORD : RoboShop@1
+  PORT : "8004"
+
+job:
+  enabled: true
+
+

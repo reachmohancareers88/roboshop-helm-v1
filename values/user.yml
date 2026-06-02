@@ -1,0 +1,12 @@
+app_name: user
+app_port: 8001
+
+config_map:
+  MONGO_URL : mongodb://mongodb-dev.rdevopsb89.online:27017/users
+  JWT_SECRET : roboshop-secret-key
+  PORT : "8001"
+
+job:
+  enabled: true
+
+

@@ -3,12 +3,15 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: roboshop-{{ .Values.app_name }}-db
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-weight: "2"
 spec:
   template:
     spec:
       restartPolicy: Never
       containers:
-      - name: {{ .Values.app_name }}-db
+      - name: roboshop-{{ .Values.app_name }}-db
         image: raghudevopsb89.azurecr.io/roboshop-{{ .Values.app_name }}-db
         imagePullPolicy: Always
         envFrom:
