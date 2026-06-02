@@ -10,7 +10,5 @@ config_map:
   NOTIFICATION_URL : http://localhost:8008
   PORT : "8007"
 
-job:
-  enabled: true
 
 
