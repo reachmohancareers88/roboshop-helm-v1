@@ -3,17 +3,19 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: roboshop-{{ .Values.app_name }}
+
 spec:
   ingressClassName: traefik
+
   rules:
-    - host: {{ .Values.app_name }}-dev.rdevopsb89.online
+    - host: {{ .Values.app_name }}-dev.drmohanlearning.online
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name:  roboshop-frontend
+                name: roboshop-frontend
                 port:
                   number: 80
 {{ end }}
