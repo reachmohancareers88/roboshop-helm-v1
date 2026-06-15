@@ -6,15 +6,17 @@ metadata:
   annotations:
     helm.sh/hook: pre-install
     helm.sh/hook-weight: "2"
+
 spec:
   template:
     spec:
       restartPolicy: Never
+
       containers:
       - name: roboshop-{{ .Values.app_name }}-db
-        image: raghudevopsb89.azurecr.io/roboshop-{{ .Values.app_name }}-db
+        image: mohanacr89.azurecr.io/roboshop-{{ .Values.app_name }}-db
         imagePullPolicy: Always
         envFrom:
-          - configMapRef:
-              name: roboshop-{{ .Values.app_name }}
+        - configMapRef:
+            name: roboshop-{{ .Values.app_name }}
 {{ end }}
